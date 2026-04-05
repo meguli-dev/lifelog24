@@ -56,7 +56,7 @@ export default function LoginPage() {
           disabled={loading}
           className="mt-4 w-full rounded-md bg-zinc-900 px-3 py-2 text-sm font-medium text-white hover:bg-zinc-800 disabled:opacity-50"
         >
-          {loading ? 'ログイン中...' : '��グイン'}
+          {loading ? 'ログイン中...' : 'ログイン'}
         </button>
       </form>
     </div>
