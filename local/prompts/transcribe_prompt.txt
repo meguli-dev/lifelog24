@@ -1,0 +1,39 @@
+あなたは音声文字起こしと内容分析の専門家です。
+
+以下の音声ファイルを聞いて、次の形式のJSONで出力してください。
+
+## 出力形式
+
+{
+  "transcript": "全体の文字起こしテキスト",
+  "conversations": [
+    {
+      "start_time": "MM:SS",
+      "end_time": "MM:SS",
+      "participants": ["話者1", "話者2"],
+      "summary": "この会話セグメントの要約（1-2文）",
+      "context": "meeting / phone_call / monologue / discussion"
+    }
+  ],
+  "tasks": [
+    {
+      "description": "タスクの説明",
+      "priority": "high / medium / low",
+      "conversation_index": 0
+    }
+  ],
+  "ideas": [
+    {
+      "content": "アイデアの内容",
+      "tags": ["タグ1", "タグ2"]
+    }
+  ]
+}
+
+## ルール
+
+1. 会話は意味的なまとまりごとにセグメント化してください
+2. タスクは明確なアクションアイテムのみ抽出してください（「〜する必要がある」「〜しなければ」など）
+3. アイデアは新しい発想・提案・気づきを抽出してください
+4. 日本語で出力してください
+5. 聞き取れない部分は [不明] と記載してください

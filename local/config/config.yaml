@@ -1,0 +1,31 @@
+# Lifelog Pipeline Configuration
+
+# ICレコーダーのドライブパス（接続時に自動検出も可能）
+recorder:
+  drive_path: "E:/"
+  file_patterns:
+    - "*.wav"
+    - "*.mp3"
+
+# ローカルデータディレクトリ
+paths:
+  raw_dir: "../data/raw"
+  vad_filtered_dir: "../data/vad_filtered"
+  pipeline_state: "../data/pipeline_state.json"
+
+# VAD設定（silero-vad）
+vad:
+  threshold: 0.5
+  min_speech_duration_ms: 250
+  min_silence_duration_ms: 1000
+  sampling_rate: 16000
+
+# Gemini API設定
+gemini:
+  model: "gemini-2.0-flash"
+  batch_size: 5
+
+# Webアプリ送信先
+web:
+  base_url: "https://your-app.vercel.app"
+  upload_endpoint: "/api/upload"

@@ -1,0 +1,33 @@
+# Python
+local/venv/
+local/.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Data (large audio files)
+local/data/raw/
+local/data/vad_filtered/
+
+# Pipeline state (local only)
+local/data/pipeline_state.json
+
+# Environment
+.env
+.env.local
+.env*.local
+!.env.local.example
+!.env.example
+
+# Next.js
+web/node_modules/
+web/.next/
+web/out/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
