@@ -64,12 +64,22 @@ export default async function RecordingDetailPage({
 
       {/* Recording metadata */}
       <div className="mt-4 rounded-lg border border-zinc-200 bg-white p-5">
-        <h2 className="text-xl font-semibold text-zinc-900">
-          {recording.filename}
-        </h2>
-        <div className="mt-2 flex gap-6 text-sm text-zinc-500">
-          <span>日付: {recording.date}</span>
-          <span>長さ: {formatDuration(recording.duration)}</span>
+        <div className="flex items-start justify-between">
+          <div>
+            <h2 className="text-xl font-semibold text-zinc-900">
+              {recording.filename}
+            </h2>
+            <div className="mt-2 flex gap-6 text-sm text-zinc-500">
+              <span>日付: {recording.date}</span>
+              <span>長さ: {formatDuration(recording.duration)}</span>
+            </div>
+          </div>
+          <a
+            href={`/api/transcripts/${recording.id}/download`}
+            className="rounded-md border border-zinc-300 bg-white px-3 py-1.5 text-sm text-zinc-700 hover:bg-zinc-50"
+          >
+            MD ダウンロード
+          </a>
         </div>
       </div>
 

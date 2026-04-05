@@ -15,7 +15,17 @@ export default async function TranscriptsPage() {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold text-zinc-900">議事録</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-semibold text-zinc-900">議事録</h2>
+        {recordings.length > 0 && (
+          <a
+            href="/api/transcripts/download"
+            className="rounded-md border border-zinc-300 bg-white px-3 py-1.5 text-sm text-zinc-700 hover:bg-zinc-50"
+          >
+            一括ダウンロード (ZIP)
+          </a>
+        )}
+      </div>
 
       {recordings.length === 0 ? (
         <p className="mt-6 text-sm text-zinc-500">録音がありません。</p>

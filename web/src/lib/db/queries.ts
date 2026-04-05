@@ -94,6 +94,15 @@ export async function getRecentIdeas(limit: number): Promise<Idea[]> {
   return result.rows as Idea[];
 }
 
+export async function getIdeasByRecordingId(recordingId: number): Promise<Idea[]> {
+  const result = await sql`
+    SELECT * FROM ideas
+    WHERE recording_id = ${recordingId}
+    ORDER BY created_at ASC
+  `;
+  return result.rows as Idea[];
+}
+
 export async function getAllIdeas(): Promise<Idea[]> {
   const result = await sql`
     SELECT i.*, r.filename, r.date AS recording_date
